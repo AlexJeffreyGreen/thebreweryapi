@@ -22,7 +22,7 @@ mongoose.connect(dbConfig.url,{
 useNewUrlParser: true,
 useUnifiedTopology: true
 }).then(()=>{
-console.log("successfully connected to the database. Test push.");
+console.log("successfully connected to the database.");
 }).catch(err=>{
   console.log("error with the connection", err);
   process.exit();
