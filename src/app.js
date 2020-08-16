@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 require('./api/routes/manufacturer.routes.js')(app);
-require('./api/routes/yeast.routes.js')(app);
+require('./api/routes/yeast.roPutes.js')(app);
 require('./api/routes/grain.routes.js')(app);
 require('./api/routes/hops.routes.js')(app);
 const dbConfig = require('../config/database.config.js');
@@ -22,7 +22,7 @@ mongoose.connect(dbConfig.url,{
 useNewUrlParser: true,
 useUnifiedTopology: true
 }).then(()=>{
-console.log("successfully connected to the database");
+console.log("successfully connected to the database. Test push.");
 }).catch(err=>{
   console.log("error with the connection", err);
   process.exit();
