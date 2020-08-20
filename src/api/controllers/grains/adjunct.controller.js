@@ -1,5 +1,5 @@
-const Adjunct = require('../models/adjunct.model.js');
-const Manufacturer = require('../models/manufacturer.model');
+const Adjunct = require('../../models/grains/adjunct.model.js');
+const Manufacturer = require('../../models/manufacturer.model');
 
 // Create and Save a new adjunct
 exports.create = async (req, res) => {

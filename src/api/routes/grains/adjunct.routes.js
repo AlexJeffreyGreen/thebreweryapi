@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const adjunct = require('../controllers/adjunct.controller.js');
+    const adjunct = require('../../controllers/grains/adjunct.controller.js');
     const apiUrl = "/api/v1";
     // Create a new Note
     app.post(`${apiUrl}/adjunct`, adjunct.create);
