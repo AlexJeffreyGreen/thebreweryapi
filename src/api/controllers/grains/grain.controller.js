@@ -1,5 +1,5 @@
-const Grain = require('../models/grain.model.js');
-const Manufacturer = require('../models/manufacturer.model');
+const Grain = require('../../models/grains/grain.model');
+const Manufacturer = require('../../models/manufacturer.model');
 
 // Create and Save a new grain
 exports.create = async (req, res) => {

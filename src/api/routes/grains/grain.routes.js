@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const grain = require('../controllers/grain.controller.js');
+    const grain = require('../../controllers/grains/grain.controller');
     const apiUrl = "/api/v1";
     // Create a new Note
     app.post(`${apiUrl}/grain`, grain.create);
