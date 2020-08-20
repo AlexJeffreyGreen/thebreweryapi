@@ -3,4 +3,5 @@ module.exports = (app) => {
   require("./api/routes/yeast.routes.js")(app);
   require("./api/routes/grain.routes.js")(app);
   require("./api/routes/hops.routes.js")(app);
+  require("./api/routes/adjunct.routes.js")(app);
 };

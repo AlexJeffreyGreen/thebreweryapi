@@ -1,16 +1,10 @@
 const mongoose = require("mongoose");
 
-const grainSchema = mongoose.Schema(
+const adjunctSchema = mongoose.Schema(
   {
       name:{
           type: String,
           required: '{PATH} is required!'
-      },
-      is_basemalt:{
-          type: mongoose.Schema.Types.Boolean
-      },
-      is_extract:{
-          type: mongoose.Schema.Types.Boolean
       },
       manufacturerid: { 
         type: mongoose.Schema.Types.ObjectId, 
@@ -22,4 +16,4 @@ const grainSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('Grain', grainSchema);
+module.exports = mongoose.model('Adjunct', adjunctSchema);
