@@ -1,23 +1,3 @@
-// name: { 
-//     type: String, 
-//     required: '{PATH} is required!'
-// },
-// parts_per_million:{
-//     type: mongoose.Schema.Types.Decimal128
-// },
-// amount_in_grams:{
-//     type:mongoose.Schema.Types.Decimal128
-// },
-// waterid:{
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'Water'
-// }
-
-//name
-//parts per million
-//amount in grams
-//water id
-
 const WaterAdjustment = require('../../models/water/wateradjustment.model');
 const Water = require('../../models/water/water.model');
 
