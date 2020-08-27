@@ -38,64 +38,64 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-    WaterAdjustment.findById(req.params.wateradjustmentid)
+    WaterAdjustment.findById(req.params.wateradjustmentId)
         .then(waterAdjustment => {
             if(!waterAdjustment){
                 return res.status(404).send({
-                    message: "water adjustmnet not found with id " + req.params.wateradjustmentid
+                    message: "water adjustmnet not found with id " + req.params.wateradjustmentId
                 });
             }
             res.send(waterAdjustment);
         }).catch(err => {
             if(err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "water adjustment not found with id " + req.params.wateradjustmentid
+                    message: "water adjustment not found with id " + req.params.wateradjustmentId
                 });
             }
             return res.status(500).send({
-                message: "Error Retrieving water adjustment with id " + req.params.wateradjustmentid
+                message: "Error Retrieving water adjustment with id " + req.params.wateradjustmentId
             });
         });
 };
 
 exports.update = (req, res) => {
-    if(!req.body.name || !req.body.wateradjustmentid){
+    if(!req.body.name || !req.params.wateradjustmentId){
         return res.status(400).send({
             message: "Water adjustment id or name can not be empty"
         });
     }
 
-    WaterAdjustment.findByIdAndUpdate(req.params.wateradjustmentid, {
+    WaterAdjustment.findByIdAndUpdate(req.params.wateradjustmentId, {
         name: req.body.name,
         parts_per_million: req.body.parts_per_million,
         amount_in_grams: req.body.amount_in_grams,
         waterid: req.body.waterid
     }, {new: true})
         .then(wateradjustment => {
-            if(!waterAdjustment){
+            if(!wateradjustment){
                 return res.status(404).send({
-                    message: "water adjustmnet not found with id " + req.params.wateradjustmentid
+                    message: "water adjustmnet not found with id " + req.params.wateradjustmentId
                 });
             }
             res.send(wateradjustment);
         }).catch(err => {
             if(err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "water adjustment not found with id " + req.params.watertypeId
+                    message: "water adjustment not found with id " + req.params.wateradjustmentId
                 });                
             }
             return res.status(500).send({
-                message: "Error updating water adjustment with id " + req.params.watertypeId
+                message: "Error updating water adjustment with id " + req.params.wateradjustmentId + err
             });
         });
 };
 
 exports.delete = (req, res) => {
-    WaterAdjustment.findByIdAndRemove(req.params.wateradjustmentid)
+    WaterAdjustment.findByIdAndRemove(req.params.wateradjustmentId)
     .then(wateradjustment => {
         if(!wateradjustment) {
             return res.status(404).send({
-                message: "water adjustmnet not found with id " + req.params.wateradjustmentid
+                message: "water adjustmnet not found with id " + req.params.wateradjustmentId
             });
         }
         res.send({message: "water adjustment deleted successfully!"});

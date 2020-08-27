@@ -8,6 +8,9 @@ const waterTypeSchema = mongoose.Schema({
     type:{
         type: String
     },
+    price_per_unit:{
+        type: mongoose.Schema.Types.Decimal128
+    },
     location:{
         type: String
     }

@@ -14,6 +14,8 @@ exports.create = (req, res) => {
     // Create a watertype
     const watertype = new WaterType({
         name: req.body.name || "Untitled watertype", 
+        type: req.body.type,
+        price_per_unit: req.body.price_per_unit,
         location: req.body.location
     });
 
@@ -73,7 +75,9 @@ exports.update = (req, res) => {
 
     // Find watertype and update it with the request body
     WaterType.findByIdAndUpdate(req.params.watertypeId, {
-        name: req.body.name || "Untitled watertype",
+        name: req.body.name || "Untitled watertype", 
+        type: req.body.type,
+        price_per_unit: req.body.price_per_unit,
         location: req.body.location
     }, {new: true})
     .then(watertype => {
